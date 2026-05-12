@@ -7,6 +7,8 @@ def buscar_valor(lista, valor)->int:
             posicion = i
     return posicion
 
+
+
 def eliminar_mayor(lista)->int:
     mayor = lista[0]
     posicion_mayor = 0
@@ -23,8 +25,9 @@ def eliminar_mayor(lista)->int:
     nueva = [0] * (len(lista)-1)
     for i in range(len(nueva)):
         nueva[i] = lista[i]
-    return nueva
+    return posicion_mayor, nueva
 
 valores = [34, 92, 100, 59, 87, 90, 1]
-print("Posición del 87:", buscar_valor(valores, 87))
+posicion, lista_sin_mayor = eliminar_mayor(valores)
+print("Posición del numero mayor:", buscar_valor(valores))
 print("Lista sin el mayor:", eliminar_mayor(valores))
